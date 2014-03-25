@@ -50,7 +50,7 @@ class WrapPlugin
 
     private void configureDependency( final String dep )
     {
-        this.project.dependencies.add( 'wrap', dep + '@jar' )
+        this.project.dependencies.add( 'wrap', dep )
         this.project.dependencies.add( 'wrapSources', dep + ':sources@jar' )
     }
 

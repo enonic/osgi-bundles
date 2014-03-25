@@ -14,10 +14,4 @@ subprojects {
     wrap {
         repo = 'http://repo.enonic.com/artifactory/public'
     }
-
-    jar {
-        manifest {
-            instruction 'Import-Package', '*;resolution:=optional'
-        }
-    }
 }

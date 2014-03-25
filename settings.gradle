@@ -1,6 +1,8 @@
 include 'jdom'
 include 'jhlabs-filters'
 include 'saxon-he'
+include 'attoparser'
+include 'elasticsearch'
 
 rootProject.name = 'parent'
 rootProject.children.each { project ->
