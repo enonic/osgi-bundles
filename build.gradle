@@ -1,6 +1,7 @@
 allprojects {
 
     apply plugin: 'base'
+    apply plugin: 'maven'
 
     group = 'com.enonic.osgi.bundles'
 

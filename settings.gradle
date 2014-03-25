@@ -1,4 +1,4 @@
-include 'jdom2'
+include 'jdom'
 
 rootProject.name = 'parent'
 rootProject.children.each { project ->

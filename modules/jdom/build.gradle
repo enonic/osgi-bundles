@@ -11,7 +11,5 @@ wrap {
     sources = true
     manifest = {
         name = 'JDOM Bundle'
-        instruction 'Export-Package', 'org.jdom2.*'
-        instruction 'Import-Package', '*'
     }
 }
