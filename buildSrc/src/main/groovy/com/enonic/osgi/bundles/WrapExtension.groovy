@@ -6,7 +6,7 @@ class WrapExtension
 
     def String[] libs = []
 
-    def boolean sources = false
-
     def Closure manifest = {}
+
+    def String repo
 }

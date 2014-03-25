@@ -1,14 +1,7 @@
-apply plugin: 'wrap'
-
-ext {
-    libVersion = '2.0.5'
-}
-
-version = "${libVersion}-1"
+version = '2.0.5'
 
 wrap {
-    libs = ["org.jdom:jdom2:${libVersion}"]
-    sources = true
+    libs = ["org.jdom:jdom2:${version}"]
     manifest = {
         name = 'JDOM Bundle'
     }

@@ -1,12 +1,17 @@
 allprojects {
-
     apply plugin: 'base'
-    apply plugin: 'maven'
 
     group = 'com.enonic.osgi.bundles'
 
     repositories {
         mavenCentral()
     }
+}
 
+subprojects {
+    apply plugin: 'wrap'
+
+    wrap {
+        repo = 'http://repo.enonic.com/artifactory/public'
+    }
 }
