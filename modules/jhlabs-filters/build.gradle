@@ -1,0 +1,8 @@
+version = '2.0.235-1'
+
+wrap {
+    libs = ["com.jhlabs:filters:${version}"]
+    manifest = {
+        name = 'JHLabs Filters Bundle'
+    }
+}

@@ -1,4 +1,6 @@
 include 'jdom'
+include 'jhlabs-filters'
+include 'saxon-he'
 
 rootProject.name = 'parent'
 rootProject.children.each { project ->
