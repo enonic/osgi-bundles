@@ -3,6 +3,8 @@
 This project build OSGi wrappers of some libraries we use here at Enonic. The following libraries are OSGi wrapped:
 
 * JDom 2.x (org.jdom/jdom2)
+* JHLabs Filters 2.x (com.jhlabs/filters)
+* Saxon HE 9.x (net.sf.saxon/Saxon-HE)
 
 ## Building
 
