@@ -1,4 +1,3 @@
-
 include 'jdom2'
 
 rootProject.name = 'parent'
