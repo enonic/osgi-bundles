@@ -63,9 +63,8 @@ class WrapPlugin
             into "${this.project.buildDir}/classes/main"
         }
 
-        this.project.tasks.getByName( 'jar' ) {
-            dependsOn 'extract'
-            manifest this.ext.manifest
+        this.project.with {
+            jar.dependsOn 'extract'
         }
     }
 
@@ -101,5 +100,7 @@ class WrapPlugin
                 }
             }
         }
+
+        this.project.task( 'install', dependsOn: 'publishToMavenLocal' )
     }
 }

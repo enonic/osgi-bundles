@@ -2,7 +2,10 @@ version = '9.5.1-4'
 
 wrap {
     libs = ["net.sf.saxon:Saxon-HE:${version}"]
-    manifest = {
+}
+
+jar {
+    manifest {
         name = 'Saxon HE Bundle'
     }
 }

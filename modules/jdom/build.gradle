@@ -2,7 +2,10 @@ version = '2.0.5'
 
 wrap {
     libs = ["org.jdom:jdom2:${version}"]
-    manifest = {
+}
+
+jar {
+    manifest {
         name = 'JDOM Bundle'
     }
 }
