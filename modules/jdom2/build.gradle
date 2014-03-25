@@ -1,0 +1,17 @@
+apply plugin: 'wrap'
+
+ext {
+    libVersion = '2.0.5'
+}
+
+version = "${libVersion}-1"
+
+wrap {
+    libs = ["org.jdom:jdom2:${libVersion}"]
+    sources = true
+    manifest = {
+        name = 'JDOM Bundle'
+        instruction 'Export-Package', 'org.jdom2.*'
+        instruction 'Import-Package', '*'
+    }
+}
