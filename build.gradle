@@ -9,9 +9,7 @@ allprojects {
 }
 
 subprojects {
-    apply plugin: 'wrap'
 
-    wrap {
-        repo = 'http://repo.enonic.com/artifactory/public'
-    }
+    apply from: "${rootProject.rootDir}/gradle/wrap.gradle"
+
 }

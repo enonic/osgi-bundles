@@ -1,7 +1,7 @@
-version = '2.0.235'
+version = '2.0.1'
 
 ext {
-    lib = 'com.jhlabs:filters:2.0.235-1'
+    lib = 'jparsec:jparsec:2.0.1'
 }
 
 dependencies {
@@ -11,7 +11,6 @@ dependencies {
 
 jar {
     manifest {
-        name = 'JHLabs Filters Library'
+        name = 'JParsec Library'
     }
 }
-

@@ -1,12 +1,17 @@
 version = '1.0.1'
 
-wrap {
-    libs = ['org.elasticsearch:elasticsearch:1.0.1']
+ext {
+    lib = 'org.elasticsearch:elasticsearch:1.0.1'
+}
+
+dependencies {
+    wrap "${lib}@jar"
+    wrapSources "${lib}:sources@jar"
 }
 
 jar {
     manifest {
-        name = 'Elasticsearch Bundle'
+        name = 'Elasticsearch Library'
         instruction 'Export-Package', 'org.elasticsearch.*'
         instruction 'Import-Package', '*;resolution:=optional'
         instruction 'Private-Package', '!org.elasticsearch.*'

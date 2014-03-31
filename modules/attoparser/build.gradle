@@ -1,11 +1,18 @@
 version = '1.3.0'
 
-wrap {
-    libs = ['org.attoparser:attoparser:1.3']
+ext {
+    lib = 'org.attoparser:attoparser:1.3'
+}
+
+dependencies {
+    wrap "${lib}@jar"
+    wrapSources "${lib}:sources@jar"
 }
 
 jar {
     manifest {
-        name = 'AttoParser Bundle'
+        name = 'AttoParser Library'
     }
 }
+
+

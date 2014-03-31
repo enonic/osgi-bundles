@@ -1,12 +1,18 @@
 version = '2.0.5'
 
-wrap {
-    libs = ['org.jdom:jdom2:2.0.5']
+ext {
+    lib = 'org.jdom:jdom2:2.0.5'
+}
+
+dependencies {
+    wrap "${lib}@jar"
+    wrapSources "${lib}:sources@jar"
 }
 
 jar {
     manifest {
-        name = 'JDOM Bundle'
+        name = 'JDOM Library'
         instruction 'Import-Package', '*;resolution:=optional'
     }
 }
+

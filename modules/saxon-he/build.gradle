@@ -1,12 +1,17 @@
 version = '9.5.1'
 
-wrap {
-    libs = ['net.sf.saxon:Saxon-HE:9.5.1-4']
+ext {
+    lib = 'net.sf.saxon:Saxon-HE:9.5.1-4'
+}
+
+dependencies {
+    wrap "${lib}@jar"
+    wrapSources "${lib}:sources@jar"
 }
 
 jar {
     manifest {
-        name = 'Saxon HE Bundle'
+        name = 'Saxon HE Library'
         instruction 'Import-Package', '*;resolution:=optional'
     }
 }
