@@ -5,12 +5,18 @@ ext {
 }
 
 dependencies {
-    wrap "${lib}@jar"
+    wrap("${lib}") {
+        exclude group: 'easymock'
+        exclude group: 'junit'
+    }
     wrapSources "${lib}:sources@jar"
 }
 
 jar {
     manifest {
         name = 'JParsec Library'
+        instruction 'Export-Package', 'org.codehaus.jparsec.*'
+        instruction 'Import-Package', '*;resolution:=optional'
+        instruction 'Private-Package', 'net.sf.cglib.reflect.*,org.objectweb.asm.*'
     }
 }
