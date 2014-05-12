@@ -4,6 +4,7 @@ include 'jhlabs-filters'
 include 'saxon-he'
 include 'attoparser'
 include 'elasticsearch'
+include 'thymeleaf'
 
 rootProject.name = 'parent'
 rootProject.children.each { project ->

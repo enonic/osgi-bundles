@@ -1,0 +1,18 @@
+version = '2.1.1_1'
+
+ext {
+    lib = 'org.thymeleaf:thymeleaf:2.1.1.RELEASE'
+}
+
+dependencies {
+    wrap "${lib}@jar"
+    wrapSources "${lib}:sources@jar"
+}
+
+jar {
+    manifest {
+        name = 'Thymeleaf Library'
+        instruction 'Export-Package', 'org.thymeleaf.*;version=2.1.1'
+        instruction 'Import-Package', '*;resolution:=optional'
+    }
+}
