@@ -1,4 +1,4 @@
-version = '1.3.0'
+version = '1.3.0_1'
 
 ext {
     lib = 'org.attoparser:attoparser:1.3'
@@ -12,6 +12,8 @@ dependencies {
 jar {
     manifest {
         name = 'AttoParser Library'
+        instruction 'Export-Package', 'org.attoparser.*;version=1.3.0'
+        instruction 'Import-Package', '*;resolution:=optional'
     }
 }
 
