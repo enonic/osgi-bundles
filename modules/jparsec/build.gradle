@@ -1,7 +1,7 @@
-version = '2.0.1'
+version = '2.1.0_1'
 
 ext {
-    lib = 'jparsec:jparsec:2.0.1'
+    lib = 'org.jparsec:jparsec:2.1'
 }
 
 dependencies {
@@ -15,7 +15,7 @@ dependencies {
 jar {
     manifest {
         name = 'JParsec Library'
-        instruction 'Export-Package', 'org.codehaus.jparsec.*'
+        instruction 'Export-Package', 'org.codehaus.jparsec.*;version=2.1.0'
         instruction 'Import-Package', '*;resolution:=optional'
         instruction 'Private-Package', 'net.sf.cglib.reflect.*,org.objectweb.asm.*'
     }

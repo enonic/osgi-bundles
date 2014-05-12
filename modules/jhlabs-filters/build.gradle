@@ -1,4 +1,4 @@
-version = '2.0.235'
+version = '2.0.235_1'
 
 ext {
     lib = 'com.jhlabs:filters:2.0.235-1'
@@ -12,6 +12,8 @@ dependencies {
 jar {
     manifest {
         name = 'JHLabs Filters Library'
+        instruction 'Export-Package', 'com.jhlabs.*;version=2.0.235'
+        instruction 'Import-Package', '*;resolution:=optional'
     }
 }
 
