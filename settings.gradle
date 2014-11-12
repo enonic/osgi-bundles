@@ -6,6 +6,7 @@ include 'attoparser'
 include 'elasticsearch'
 include 'thymeleaf'
 include 'resteasy'
+include 'jmustache'
 
 rootProject.name = 'parent'
 rootProject.children.each { project ->
