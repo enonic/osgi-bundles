@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+def resolveSources()
+{
+    def componentIds = configurations.compile.incoming.resolutionResult.allDependencies.collect { it.selected.id }
+
+    def result = dependencies.createArtifactResolutionQuery()
+        .forComponents( componentIds )
+        .withArtifacts( JvmLibrary, SourcesArtifact )
+        .execute()
+
+    return result.resolvedComponents.collect { it.getArtifacts( SourcesArtifact ).file.first() }
+}
+
+task copySources << {
+    copy {
+        into "$buildDir/sources"
+        from resolveSources().collect { zipTree( it ) }
+    }
+}
+
+task sourcesJar( type: Jar, dependsOn: copySources ) {
+    from sourceSets.main.allSource
+    from file( "$buildDir/sources" )
+    classifier = 'sources'
+}
+
+artifacts {
+    archives sourcesJar
+}

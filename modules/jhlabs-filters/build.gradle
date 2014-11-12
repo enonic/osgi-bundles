@@ -1,19 +1,13 @@
 version = '2.0.235_1'
 
-ext {
-    lib = 'com.jhlabs:filters:2.0.235-1'
-}
-
 dependencies {
-    wrap "${lib}@jar"
-    wrapSources "${lib}:sources@jar"
-}
-
-jar {
-    manifest {
-        name = 'JHLabs Filters Library'
-        instruction 'Export-Package', 'com.jhlabs.*;version=2.0.235'
-        instruction 'Import-Package', '*;resolution:=optional'
+    compile( 'com.jhlabs:filters:2.0.235-1' ) {
+        transitive = false
     }
 }
 
+bundle {
+    instruction 'Bundle-Name', 'JHLabs Filters Library'
+    instruction 'Export-Package', 'com.jhlabs.*;version=2.0.235'
+    instruction 'Import-Package', '*;resolution:=optional'
+}

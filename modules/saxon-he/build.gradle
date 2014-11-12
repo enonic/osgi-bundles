@@ -1,18 +1,13 @@
 version = '9.5.1_1'
 
-ext {
-    lib = 'net.sf.saxon:Saxon-HE:9.5.1-4'
-}
-
 dependencies {
-    wrap "${lib}@jar"
-    wrapSources "${lib}:sources@jar"
+    compile( 'net.sf.saxon:Saxon-HE:9.5.1-4' ) {
+        transitive = false
+    }
 }
 
-jar {
-    manifest {
-        name = 'Saxon HE Library'
-        instruction 'Export-Package', 'net.sf.saxon.*;version=9.5.1'
-        instruction 'Import-Package', '*;resolution:=optional'
-    }
+bundle {
+    instruction 'Bundle-Name', 'Saxon HE Library'
+    instruction 'Export-Package', 'net.sf.saxon.*;version=9.5.1'
+    instruction 'Import-Package', '*;resolution:=optional'
 }

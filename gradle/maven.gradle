@@ -1,29 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'osgi'
 apply plugin: 'maven-publish'
-
-configurations {
-    wrap
-    wrapSources
-}
 
 task install( dependsOn: 'publishToMavenLocal' ) {
     group = 'Publishing'
     description = 'Alias for publishToMavenLocal'
-}
-
-task extract( type: Copy ) {
-    from {
-        configurations.wrap.collect { zipTree( it ) }
-    }
-    into "${buildDir}/classes/main"
-}
-
-task sourcesJar( type: Jar ) {
-    classifier = 'sources'
-    from {
-        configurations.wrapSources.collect { zipTree( it ) }
-    }
 }
 
 publishing {
@@ -42,6 +21,3 @@ publishing {
         }
     }
 }
-
-jar.dependsOn 'extract'
-build.dependsOn 'sourcesJar'

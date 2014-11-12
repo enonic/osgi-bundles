@@ -1,22 +1,13 @@
 version = '2.1.0_1'
 
-ext {
-    lib = 'org.jparsec:jparsec:2.1'
-}
-
 dependencies {
-    wrap("${lib}") {
-        exclude group: 'easymock'
-        exclude group: 'junit'
+    compile( 'org.jparsec:jparsec:2.1' ) {
+        transitive = false
     }
-    wrapSources "${lib}:sources@jar"
 }
 
-jar {
-    manifest {
-        name = 'JParsec Library'
-        instruction 'Export-Package', 'org.codehaus.jparsec.*;version=2.1.0'
-        instruction 'Import-Package', '*;resolution:=optional'
-        instruction 'Private-Package', 'net.sf.cglib.reflect.*,org.objectweb.asm.*'
-    }
+bundle {
+    instruction 'Bundle-Name', 'JParsec Library'
+    instruction 'Export-Package', 'org.codehaus.jparsec.*;version=2.1'
+    instruction 'Import-Package', '*;resolution:=optional'
 }

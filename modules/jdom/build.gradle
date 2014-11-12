@@ -1,19 +1,13 @@
 version = '2.0.5_1'
 
-ext {
-    lib = 'org.jdom:jdom2:2.0.5'
-}
-
 dependencies {
-    wrap "${lib}@jar"
-    wrapSources "${lib}:sources@jar"
-}
-
-jar {
-    manifest {
-        name = 'JDOM Library'
-        instruction 'Export-Package', 'org.jdom2.*;version=2.0.5'
-        instruction 'Import-Package', '*;resolution:=optional'
+    compile( 'org.jdom:jdom2:2.0.5' ) {
+        transitive = false
     }
 }
 
+bundle {
+    instruction 'Bundle-Name', 'JDom 2 Library'
+    instruction 'Export-Package', 'org.jdom2.*;version=2.0.5'
+    instruction 'Import-Package', '*;resolution:=optional'
+}

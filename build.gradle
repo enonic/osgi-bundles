@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.dm.gradle:gradle-bundle-plugin:0.5'
+    }
+}
+
 allprojects {
     apply plugin: 'base'
 
@@ -9,7 +19,8 @@ allprojects {
 }
 
 subprojects {
-
-    apply from: "${rootProject.rootDir}/gradle/wrap.gradle"
-
+    apply from: "$rootDir/gradle/java.gradle"
+    apply from: "$rootDir/gradle/osgi.gradle"
+    apply from: "$rootDir/gradle/sources.gradle"
+    apply from: "$rootDir/gradle/maven.gradle"
 }
