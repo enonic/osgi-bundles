@@ -1,7 +1,7 @@
-version = '1.3.4_1'
+version = '1.3.6_1'
 
 dependencies {
-    compile( 'org.elasticsearch:elasticsearch:1.3.4' ) {
+    compile( 'org.elasticsearch:elasticsearch:1.3.6' ) {
         exclude group: 'org.antlr'
         exclude group: 'org.ow2.asm'
     }
@@ -14,5 +14,13 @@ bundle {
     instruction 'Export-Package', 'org.apache.lucene.*;-split-package:=merge-first'
     instruction 'Export-Package', 'org.tartarus.*'
     instruction 'Import-Package', '*;resolution:=optional'
-    instruction 'Private-Package', 'META-INF.services.*;-split-package:=merge-first'
+    instruction 'Private-Package', 'config.*,META-INF.services.*;-split-package:=merge-first'
 }
+
+/*
+install.mavenInstaller.pom.whenConfigured { 
+    it.dependencies.removeAll { it.scope == "compile" }
+}
+*/
+
+

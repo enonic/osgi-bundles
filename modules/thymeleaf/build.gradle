@@ -1,13 +1,13 @@
 version = '2.1.1_1'
 
 dependencies {
-    compile( 'org.thymeleaf:thymeleaf:2.1.1.RELEASE' ) {
-        transitive = false
-    }
+    compile( 'org.thymeleaf:thymeleaf:2.1.1.RELEASE' )
 }
 
 bundle {
     instruction 'Bundle-Name', 'Thymeleaf Library'
     instruction 'Export-Package', 'org.thymeleaf.*;version=2.1.1'
+    instruction 'Export-Package', 'ognl.*;version=3.0.6'
+    instruction 'Export-Package', 'javassist.*;version=3.16.1'
     instruction 'Import-Package', '*;resolution:=optional'
 }
