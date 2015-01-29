@@ -1,4 +1,4 @@
-version = '2.1.1_1'
+version = '2.1.1_2'
 
 dependencies {
     compile( 'org.thymeleaf:thymeleaf:2.1.1.RELEASE' )
