@@ -1,4 +1,4 @@
-apply plugin: 'bundle'
+apply plugin: 'org.dm.bundle'
 
 bundle {
     instruction '-nouses', 'true'

@@ -1,12 +1,8 @@
-include 'jdom'
 include 'jparsec'
-include 'jhlabs-filters'
-include 'saxon-he'
 include 'attoparser'
 include 'elasticsearch'
-include 'thymeleaf'
+include 'okhttp'
 include 'resteasy'
-include 'jmustache'
 
 rootProject.name = 'parent'
 rootProject.children.each { project ->

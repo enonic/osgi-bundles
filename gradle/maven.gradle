@@ -1,4 +1,5 @@
 apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.artifactory'
 
 task install( dependsOn: 'publishToMavenLocal' ) {
     group = 'Publishing'
@@ -15,9 +16,20 @@ publishing {
             }
         }
     }
-    repositories {
-        maven {
-            url 'http://repo.enonic.com/artifactory/public'
+}
+
+artifactory {
+    contextUrl = 'https://repo.enonic.com/artifactory'
+    publish {
+        repository {
+            repoKey = 'public'
+        }
+        defaults {
+            publications( 'mavenJava' )
+            publishArtifacts = true
+            publishPom = true
         }
     }
 }
+
+publish.dependsOn += 'artifactoryPublish'
