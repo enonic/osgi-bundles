@@ -1,7 +1,7 @@
-version = '1.7.4_1'
+version = '1.5.2_1'
 
 dependencies {
-    compile( 'org.elasticsearch:elasticsearch:1.7.4' ) {
+    compile( 'org.elasticsearch:elasticsearch:1.5.2' ) {
         exclude group: 'org.antlr'
         exclude group: 'org.ow2.asm'
     }
