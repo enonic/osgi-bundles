@@ -1,0 +1,19 @@
+version = '1.9.2_1'
+
+dependencies {
+    compile 'org.apache.jclouds.provider:aws-s3:1.9.2'
+    compile 'com.google.guava:guava:18.0'
+}
+
+bundle {
+    instruction 'Bundle-Name', 'JClouds AWS S3'
+    instruction 'Private-Package', 'net.iharder.*'
+    instruction 'Export-Package', 'org.jclouds.*;-split-package:=merge-first'
+    instruction 'Export-Package', 'com.google.inject.*;-split-package:=merge-first'
+    instruction 'Export-Package', 'com.google.gson.*'
+    instruction 'Export-Package', 'org.aopalliance.*'
+    instruction 'Export-Package', 'com.jamesmurty.utils.*'
+    instruction 'Export-Package', 'org.nnsoft.guice.rocoto.*'
+    instruction 'Export-Package', 'javax.inject.*'
+    instruction 'Export-Package', 'javax.ws.rs.*'
+}
