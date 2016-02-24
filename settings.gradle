@@ -4,6 +4,7 @@ include 'elasticsearch'
 include 'okhttp'
 include 'resteasy'
 include 'jclouds-s3'
+include 'openstack4j'
 
 rootProject.name = 'parent'
 rootProject.children.each { project ->

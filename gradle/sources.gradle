@@ -9,7 +9,13 @@ def resolveSources()
         .withArtifacts( JvmLibrary, SourcesArtifact )
         .execute()
 
-    return result.resolvedComponents.collect { it.getArtifacts( SourcesArtifact ).file.first() }
+    return result.resolvedComponents.
+        findAll {
+            it.getArtifacts( SourcesArtifact ).file.size() > 0
+        }.
+        collect {
+            it.getArtifacts( SourcesArtifact ).file.first()
+        }
 }
 
 task copySources << {

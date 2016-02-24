@@ -1,0 +1,17 @@
+version = '2.0.9_3'
+
+dependencies {
+    compile( 'org.pacesys:openstack4j-core:2.0.9' ) {
+        exclude group: 'com.google.guava'
+    }
+    compile( 'org.pacesys.openstack4j.connectors:openstack4j-okhttp:2.0.9' ) {
+        exclude group: 'com.google.guava'
+    }
+}
+
+
+bundle {
+    instruction 'Bundle-Name', 'Openstack4j'
+    instruction 'Export-Package', 'org.openstack4j.*;-split-package:=merge-first'
+    instruction 'Private-Package', 'com.fasterxml.jackson.dataformat.yaml.*;-split-package:=merge-first'
+}
